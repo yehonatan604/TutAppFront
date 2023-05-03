@@ -1,0 +1,25 @@
+h2:hover, i:hover {
+    cursor: pointer;
+    color: #ffffffbc;   
+}
+
+.container {
+    background-image: url("/assets/Images/HeaderBackground.png");
+    background-position: -9ch 208em;
+    box-shadow: 1px 1px gray;
+    display: flex;
+    margin-top: 1%;
+    justify-content: space-around;
+    height: 40px;
+}
+
+h2 {
+    color:white;
+    text-shadow: 1px 1px gray;
+    margin: 5px;
+}
+
+i {
+    margin-top: 5px;
+    color: #ffffff;
+}

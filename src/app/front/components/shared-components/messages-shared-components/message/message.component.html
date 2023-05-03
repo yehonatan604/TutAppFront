@@ -1,0 +1,6 @@
+<div *ngIf="message">
+  <h2 class="section-header">{{ message.title! }}</h2>
+  <h3>מאת: {{ message.senderEmail! }}</h3>
+  <h3>נשלח בתאריך: {{ message.created! | beautifyDate }}</h3>
+  <p id="content">{{ message.content! }}</p>
+</div>

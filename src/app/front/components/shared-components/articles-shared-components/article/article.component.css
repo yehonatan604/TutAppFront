@@ -1,0 +1,14 @@
+section {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+img {
+    width: 150px;
+}
+
+p {
+    white-space:pre-line;
+}

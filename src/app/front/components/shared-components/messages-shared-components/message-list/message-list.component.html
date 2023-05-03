@@ -1,0 +1,34 @@
+<div class="container" *ngIf="messages">
+  <table>
+    <tr>
+      <th>מאת</th>
+      <th>אל</th>
+      <th>תאריך</th>
+      <th>כותרת</th>
+      <th>תוכן</th>
+      <th>סטטוס</th>
+    </tr>
+    <ng-container *ngFor="let msg of messages">
+      <tr id="msg-row" (click)="goToMessage(msg.id)">
+        <td>
+          <span>{{ msg.senderName }}</span>
+        </td>
+        <td>
+          <span>{{ msg.reciverName }}</span>
+        </td>
+        <td>
+          <span>{{ msg.created | beautifyDate}}</span>
+        </td>
+        <td>
+          <span>{{ msg.title }}</span>
+        </td>
+        <td>
+          <span>{{ msg.content }}</span>
+        </td>
+        <td>
+          <span>{{ statusTypes[msg.status] }}</span>
+        </td>
+      </tr>
+    </ng-container>
+  </table>
+</div>

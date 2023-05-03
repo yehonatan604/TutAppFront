@@ -1,0 +1,65 @@
+<h2 class="section-header">יצירת מאמר חדש</h2>
+
+<section class="content-section container myForm">
+    <form [formGroup]="createArticleForm" class="myForm" (ngSubmit)="onSubmit()">
+
+        <!-- title Control -->
+        <label>
+            <div class="myFormDiv">
+                <p>כותרת</p>
+                <input type="text" id="title" formControlName="title">
+            </div>
+        </label>
+        <span *ngIf="!createArticleForm.get('title')!.valid && createArticleForm.get('title')!.touched"
+            class="help-block">
+            <p>אנא הכנס כותרת בת 8 אותיות ומעלה</p>
+        </span>
+
+        <!-- category Control -->
+        <label>
+            <div class="myFormDiv">
+                <p>קטגוריה</p>
+                <select id="category" formControlName="category">
+                    <option *ngFor="let category of categoriesList">
+                        <p>{{category}}</p>
+                    </option>
+                </select>
+            </div>
+        </label>
+        <span *ngIf="!createArticleForm.get('category')!.valid && createArticleForm.get('category')!.touched"
+            class="help-block">
+            <p>יש לבחור קטגוריה!</p>
+        </span>
+
+        <!-- image Control -->
+        <label>
+            <div class="myFormDiv">
+                <p>תמונה</p>
+                <select id="image" formControlName="image" (click)="showImage()">
+                    <option *ngFor="let img of categoryImageList">
+                        <p>{{img.title}}</p>
+                    </option>
+                </select>
+            </div>
+        </label>
+        <span *ngIf="!createArticleForm.get('image')!.valid && createArticleForm.get('image')!.touched"
+            class="help-block">
+            <p>אנא הזן כתובת URL תקינה</p>
+        </span>
+        <img src="{{image ? image.location : null}}">
+
+        <!-- content Control -->
+        <div class="myFormDiv">
+            <label for="content">
+                <p id="editor-label">תוכן המאמר</p>
+            </label>
+            <angular-editor id="content" formControlName="content" [config]="editorConfig"></angular-editor>
+        </div>
+        <span *ngIf="!createArticleForm.get('content')!.valid" class="help-block">
+            <p>אנא הכנס תוכן בן 100 אותיות ומעלה</p>
+        </span>
+
+        <button type="submit" class="btn btn-success">שלח</button>
+
+    </form>
+</section>

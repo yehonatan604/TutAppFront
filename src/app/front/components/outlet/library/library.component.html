@@ -1,0 +1,27 @@
+<!-- שפות תכנות -->
+<section class="content-section container">
+    <app-category-headline [articlesList]="articlesByProgramming" [title]="'שפות תכנות'" 
+        (moveWasClicked)="move(categoryTypes.Programming, $event)"></app-category-headline>
+    <app-articles-moving class="article-items" [articlesList]="articlesByProgramming"></app-articles-moving>
+</section>
+
+<!-- אינטרנט ורשתות -->
+<section class="content-section container">
+    <app-category-headline [articlesList]="articlesByInternet" [title]="'אינטרנט ורשתות'" 
+        (moveWasClicked)="move(categoryTypes.Internet, $event)"></app-category-headline>
+    <app-articles-moving class="article-items" [articlesList]="articlesByInternet"></app-articles-moving>
+</section>
+
+<!-- עיצוב גרפי -->
+<section class="content-section container">
+    <app-category-headline [articlesList]="articlesByDesign" [title]="'עיצוב גרפי'"
+        (moveWasClicked)="move(categoryTypes.Design, $event)"></app-category-headline>
+    <app-articles-moving class="article-items" [articlesList]="articlesByDesign"></app-articles-moving>
+</section>
+
+<!-- בית חכם -->
+<section class="content-section container">
+    <app-category-headline [articlesList]="articlesByIOT" [title]="'בית חכם'"
+        (moveWasClicked)="move(categoryTypes.IOT, $event)"></app-category-headline>
+    <app-articles-moving class="article-items" [articlesList]="articlesByIOT"></app-articles-moving>
+</section>

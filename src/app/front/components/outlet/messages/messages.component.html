@@ -1,0 +1,17 @@
+<section class="content-section">
+  <div class="container">
+    <div class="headline">
+      <h3>דואר נכנס</h3>
+    </div>
+    <app-message-list [messages]="messagesIn" class="bla"></app-message-list>
+  </div>
+
+  <div class="container">
+    <div class="headline">
+      <h3>דואר יוצא</h3>
+    </div>
+    <app-message-list [messages]="messagesOut" class="bla"></app-message-list>
+
+    <button class="btn btn-success" (click)="onNewMessage()">חדש</button>
+  </div>
+</section>

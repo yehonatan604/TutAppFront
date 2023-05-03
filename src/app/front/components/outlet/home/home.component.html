@@ -1,0 +1,38 @@
+<!-- 'החדשים ביותר' -->
+<section class="content-section container">
+  <app-category-headline
+    [articlesList]="articlesByNew"
+    [title]="'החדשים ביותר'"
+    (moveWasClicked)="move(articleListType.New, $event)"
+  ></app-category-headline>
+  <app-articles-moving
+    class="article-items"
+    [articlesList]="articlesByNew"
+  ></app-articles-moving>
+</section>
+
+<!-- 'המדורגים ביותר' -->
+<section class="content-section container">
+  <app-category-headline
+    [articlesList]="articlesByStarred"
+    [title]="'המדורגים ביותר'"
+    (moveWasClicked)="move(articleListType.Starred, $event)"
+  ></app-category-headline>
+  <app-articles-moving
+    class="article-items"
+    [articlesList]="articlesByStarred"
+  ></app-articles-moving>
+</section>
+
+<!-- 'הנצפים ביותר' -->
+<section class="content-section container">
+  <app-category-headline
+    [articlesList]="articlesByVisited"
+    [title]="'הנצפים ביותר'"
+    (moveWasClicked)="move(articleListType.Visited, $event)"
+  ></app-category-headline>
+  <app-articles-moving
+    class="article-items"
+    [articlesList]="articlesByVisited"
+  ></app-articles-moving>
+</section>

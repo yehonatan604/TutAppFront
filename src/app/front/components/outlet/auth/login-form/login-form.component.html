@@ -1,0 +1,27 @@
+<form [formGroup]="loginForm" class="myForm" (ngSubmit)="onSubmit()">
+
+    <label>
+        <div class="myFormDiv">
+            אימייל
+            <input type="text" id="email" formControlName="email">
+        </div>
+    </label>
+    <span *ngIf="!loginForm.get('email')!.valid && loginForm.get('email')!.touched">
+        <p>
+            אנא הכנס כתובת אימייל תקינה
+        </p>
+    </span>
+    <label>
+        <div class="myFormDiv">
+            סיסמא
+            <input type="password" id="password" formControlName="password">
+        </div>
+    </label>
+    <span *ngIf="!loginForm.get('password')!.valid && loginForm.get('password')!.touched">
+        <p>
+            בחר סיסמא תקינה בת 8 ספרות באנגלית עם אות אחת גדולה לפחות ומספר אחד לפחות
+        </p>
+    </span>
+
+    <button type="submit" class="btn btn-success" *ngIf="loginForm.valid">שלח</button>
+</form>

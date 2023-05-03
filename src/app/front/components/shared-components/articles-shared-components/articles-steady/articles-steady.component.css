@@ -1,0 +1,10 @@
+.article-item {
+    display: flex;
+    margin: auto;
+    margin-bottom: 5%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}

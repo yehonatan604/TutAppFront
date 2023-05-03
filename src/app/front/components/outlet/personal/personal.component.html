@@ -1,0 +1,24 @@
+<h2 class="section-header">אזור אישי</h2>
+
+<section class="content-section container">
+    <div class="headline">
+        <h3>הפרטים שלי</h3>
+    </div>
+    <app-user-details [propList]="userDetails"></app-user-details>
+    <button class="btn btn-success" (click)="onClickToggleShowEditForm()">עריכה +</button>
+    <app-edit-user-form *ngIf="showForm"></app-edit-user-form>
+</section>
+
+<section id="statistics" class="content-section container">
+    <div class="headline">
+        <h3>סטטיסטיקה</h3>
+    </div>
+    <app-user-details [propList]="userStats"></app-user-details>
+</section>
+
+<section class="content-section container">
+    <div class="headline">
+        <h3>המאמרים שלי</h3>
+    </div>
+    <app-articles-steady [articles]="articles"></app-articles-steady>
+</section>

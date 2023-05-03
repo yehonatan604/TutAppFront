@@ -1,0 +1,66 @@
+<form [formGroup]="registerForm" class="myForm" (ngSubmit)="onSubmit()">
+
+    <label>
+        <div class="myFormDiv">
+            שם משתמש
+            <input type="text" id="userName" formControlName="userName">
+        </div>
+    </label>
+    <span *ngIf="!registerForm.get('userName')!.valid && registerForm.get('userName')!.touched">
+        <p>
+            אנא הכנס שם משתמש בעברית בעל 3 אותיות לפחות
+        </p>
+    </span>
+    <label>
+        <div class="myFormDiv">
+            אימייל
+            <input type="text" id="email" formControlName="email">
+        </div>
+    </label>
+    <span *ngIf="!registerForm.get('email')!.valid && registerForm.get('email')!.touched">
+        <p>
+            אנא הכנס כתובת אימייל תקינה
+        </p>
+    </span>
+    <label>
+        <div class="myFormDiv">
+            תאריך לידה
+            <input type="date" id="dob" formControlName="dob" min="{{minDate | stringifyDate}}"
+                max="{{today | stringifyDate}}">
+        </div>
+    </label>
+    <span *ngIf="!registerForm.get('dob')!.valid && registerForm.get('dob')!.touched">
+        <p>
+            בחר תאריך לידה תקין
+        </p>
+    </span>
+    <label>
+        <div class="myFormDiv">
+            סיסמא
+            <input type="password" id="password" formControlName="password">
+        </div>
+    </label>
+    <span *ngIf="!registerForm.get('password')!.valid && registerForm.get('password')!.touched">
+        <p>
+            בחר סיסמא תקינה בת 8 ספרות באנגלית עם אות אחת גדולה לפחות ומספר אחד לפחות
+        </p>
+    </span>
+    <label>
+        <div class="myFormDiv">
+            וידוא סיסמא
+            <input type="password" id="passwordRepeat" formControlName="passwordRepeat" (keyup)="onLostFocus()">
+        </div>
+    </label>
+    <span *ngIf="!registerForm.get('passwordRepeat')!.valid && registerForm.get('passwordRepeat')!.touched">
+        <p>
+            בחר סיסמא תקינה בת 8 ספרות באנגלית עם אות אחת גדולה לפחות ומספר אחד לפחות
+        </p>
+    </span>
+    <span *ngIf="!passwordRepeatValid && registerForm.get('passwordRepeat')!.touched">
+        <p class="unMatch">
+            הסיסמא שהזנת אינה תואמת את הסיסמא הראשונית
+        </p>
+    </span>
+
+    <button type="submit" class="btn btn-success" *ngIf="registerForm.valid && passwordRepeatValid">שלח</button>
+</form>

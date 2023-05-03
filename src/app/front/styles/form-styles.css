@@ -1,0 +1,57 @@
+.myForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0%;
+}
+
+.myFormDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    color: rgb(100, 35, 35);
+    font-weight: bold;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+    border: 2px solid rgb(226, 12, 12);
+}
+
+.unMatch {
+    color: indianred;
+}
+
+input, select, textarea {
+    width: 180px;
+    margin-bottom: 2.5%;
+}
+
+p {
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 1.5%;
+    color: rgb(25, 25, 25);
+}
+
+h2 {
+    margin-bottom: 0.3em;
+}
+
+.btn {
+    width: 80px;
+    margin-top: 2.5%;
+}
+
+.btn-primary {
+    margin:2.5%;
+}
+
+.help-block>p {
+    color: rgb(134, 23, 23) !important;
+    font-weight: bolder;
+    text-align: center;
+}
+
+label {
+    text-align: right !important;
+}

@@ -1,0 +1,28 @@
+<h2 class="section-header">שליחת הודעה</h2>
+
+<form [formGroup]="newMessageForm" class="myForm" (ngSubmit)="onSubmit()">
+
+    <label>
+        <div class="myFormDiv">
+            כותרת
+            <input type="text" id="title" formControlName="title">
+        </div>
+    </label>
+    <span *ngIf="!newMessageForm.get('title')!.valid && newMessageForm.get('title')!.touched">
+        <p>
+            אנא הזן כותרת בעלת 4 אותיות לפחות, מקסימום 30
+        </p>
+    </span>
+    <label>
+        <div class="myFormDiv">
+            תוכן
+            <textarea id="content" formControlName="content" rows="8"></textarea>
+        </div>
+    </label>
+    <span *ngIf="!newMessageForm.get('content')!.valid && newMessageForm.get('content')!.touched">
+        <p>
+            אנא הזן תוכן בעל 4 אותיות לפחות 
+        </p>
+    </span>
+    <button type="submit" class="btn btn-success" *ngIf="newMessageForm.valid" (click)="onSubmit()">שלח</button>
+</form>

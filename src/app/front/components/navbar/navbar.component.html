@@ -1,0 +1,57 @@
+<header class="main-header">
+    <nav class="navbar navbar-default">
+        <div class="navbar-header main-header" (click)="collapsed = !collapsed">
+            <button type="button" class="navbar-toggle">
+                <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
+                <img src="assets/Images/logo.png">
+            </button>
+            <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a routerLinkActive="active" routerLink="/login" (click)="onDisconnect()">
+                            {{logMode}}
+                            <i class="fa fa-user-circle" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLinkActive="active" routerLink="/messages">
+                            הודעות
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLinkActive="active" routerLink="/personal">
+                            {{userName}}
+                            <i class="fa fa-id-card"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLinkActive="active" routerLink="/create">
+                            יצירה
+                            <i class="fa fa-pencil fa-rotate-180"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLinkActive="active" routerLink="/search">
+                            חיפוש
+                            <i class="fa fa-search fa-rotate-90"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLinkActive="active" routerLink="/library">
+                            ספרייה
+                            <i class="fa fa-book"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a routerLinkActive="active" routerLink="/home">
+                            דף הבית
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <app-header></app-header>
+</header>

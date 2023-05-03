@@ -1,0 +1,95 @@
+.active {
+    background-color: rgba(255, 255, 255, 0.103) !important;
+    color:white !important;
+}
+
+img {
+    max-width: 46px;
+}
+
+ul {
+    position: relative;
+    display: inline-flex;
+    top: 0%;
+    justify-content: center;
+    width:100%;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+}
+
+
+.main-nav li, .main-header li {
+    display: inline;
+    padding:20px;
+}
+
+.main-nav, .main-header {
+    font-size: 1.4em;
+    font-weight: lighter;
+}
+
+.main-header {
+    
+    width: 100%;
+}
+
+.nav a {
+    display: inline-block;
+    padding: .5em;
+    color: white !important;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    background-color: rgba(255, 255, 255, 0.341);
+    color: rgba(255, 255, 255, 0.751) !important;
+}
+
+.navbar {
+    position: sticky;
+    top:0%;
+}
+
+.navbar-header {
+    padding: 1px;
+    border: 0;
+    margin: auto;
+    text-align: right;
+    border-bottom: 1px solid silver;
+}
+
+.navbar-toggle {
+    width: 90%;
+    border: 0 !important;
+}
+
+.navbar-toggle:focus {
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.navbar-toggle:hover {
+    background-color: rgba(95, 95, 95, 0.471);
+}
+
+.navbar.navbar-default {
+    background-color: #99ccff00;
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.navbar.navbar-default .navbar-collapse {
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.icon-bar {
+    width: 100px;
+    text-align: center;
+    margin:auto;
+}
+
+.fa {
+    color: white;
+}

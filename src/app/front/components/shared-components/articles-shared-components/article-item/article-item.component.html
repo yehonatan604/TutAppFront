@@ -1,0 +1,24 @@
+
+<div class="article-item">
+    <div class="flip-card">
+        <div class="flip-card-inner" (click)="onClick()">
+            <div class="flip-card-front">
+                <p class="article-item-title">{{article.title}}</p>
+                <img class="article-item-image" src="{{imagePath}}">
+                <button *ngIf="isCreator" class="btn btn-danger" (click)="deleteArticle()">
+                    X
+                </button>
+                <button *ngIf="isCreator" class="btn btn-danger" (click)="editArticle()">
+                    <i class="fa fa-pencil"></i>
+                </button>
+                <p class="article-item-title content">{{article.content | shortenText: 60 | json}}</p>
+            </div>
+            <div class="flip-card-back">
+                <img class="article-item-image" src="{{imagePath}}">
+                <p class="article-item-title author">{{article.userName}}</p>
+                <p class="article-item-title stars">Stars: {{article.stars}}</p>
+                <p class="article-item-title views">Views: {{article.views}}</p>
+            </div>
+        </div>
+    </div>
+</div>

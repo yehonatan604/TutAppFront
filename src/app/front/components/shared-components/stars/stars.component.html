@@ -1,0 +1,44 @@
+<i
+  class="fa fa-star-o"
+  #star1
+  (mouseenter)="onMouseOver(star1)"
+  (mouseleave)="onMouseLeave(star1)"
+  (click)="onClick([star2, star3, star4, star5], star1)"
+>
+</i>
+
+<i
+  class="fa fa-star-o"
+  #star2
+  (mouseenter)="onMouseOver(star1, star2)"
+  (mouseleave)="onMouseLeave(star1, star2)"
+  (click)="onClick([star3, star4, star5], star1, star2)"
+>
+</i>
+
+<i
+  class="fa fa-star-o"
+  #star3
+  (mouseenter)="onMouseOver(star1, star2, star3)"
+  (mouseleave)="onMouseLeave(star1, star2, star3)"
+  (click)="onClick([star4, star5], star1, star2, star3)"
+>
+</i>
+
+<i
+  class="fa fa-star-o"
+  #star4
+  (mouseenter)="onMouseOver(star1, star2, star3, star4)"
+  (mouseleave)="onMouseLeave(star1, star2, star3, star4)"
+  (click)="onClick([star5], star1, star2, star3, star4)"
+>
+</i>
+
+<i
+  class="fa fa-star-o"
+  #star5
+  (mouseenter)="onMouseOver(star1, star2, star3, star4, star5)"
+  (mouseleave)="onMouseLeave(star1, star2, star3, star4, star5)"
+  (click)="onClick([], star1, star2, star3, star4, star5)"
+>
+</i>

@@ -1,0 +1,7 @@
+<h1 class="section-header">חיפוש</h1>
+<section class="content-section container">
+    <input type="text" class="icon" value placeholder="Search" [(ngModel)]="search"/>
+    <button class="btn btn-primary" (click)="onClick()">GO</button>
+    <app-articles-steady [articles]="articles"></app-articles-steady>
+    <br><br>
+</section>

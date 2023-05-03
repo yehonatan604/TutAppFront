@@ -1,0 +1,65 @@
+<hr/>
+<section class="content-section container myForm">
+    <form [formGroup]="editDetailsForm" class="myForm" (ngSubmit)="onSubmit()">
+
+        <!-- email Control -->
+        <label>
+            <div class="myFormDiv">
+                <p>אימייל</p>
+                <input type="email" id="email" formControlName="email">
+            </div>
+        </label>
+        <span *ngIf="!editDetailsForm.get('email')!.valid && editDetailsForm.get('email')!.touched" class="help-block">
+            <p>!אנא הכנס כתובת אימייל תקינה</p>
+        </span>
+
+        <!-- userName Control -->
+        <label>
+            <div class="myFormDiv">
+                <p>שם משתמש</p>
+                <input type="text" id="userName" formControlName="userName">
+            </div>
+        </label>
+        <span *ngIf="!editDetailsForm.get('userName')!.valid && editDetailsForm.get('userName')!.touched" class="help-block">
+            <p>אנא הכנס שם משתמש תקין</p>
+        </span>
+
+        <!-- dob Control -->
+        <label>
+            <div class="myFormDiv">
+                <p>תאריך לידה</p>
+                <input type="date" id="dob" formControlName="dob">
+            </div>
+        </label>
+        <span *ngIf="!editDetailsForm.get('dob')!.valid && editDetailsForm.get('dob')!.touched" class="help-block">
+            <p>אנא הכנס תאריך לידה תקין</p>
+        </span>
+
+        <!-- categories Control -->
+        <label>
+            <div class="myFormDiv">
+                <p>קטגוריות מועדפות</p>
+                <input type="text" id="categories" formControlName="categories">
+            </div>
+        </label>
+
+        <!-- hobbies Control -->
+        <label>
+            <div class="myFormDiv">
+                <p>תחביבים</p>
+                <input type="text" id="hobbies" formControlName="hobbies">
+            </div>
+        </label>
+
+        <!-- about Control -->
+        <label>
+            <div class="myFormDiv">
+                <p>טקסט חופשי</p>
+                <textarea id="aboutMe" formControlName="aboutMe" rows="7"></textarea>
+            </div>
+        </label>
+
+        <button type="submit" class="btn btn-success">שלח</button>
+
+    </form>
+</section>

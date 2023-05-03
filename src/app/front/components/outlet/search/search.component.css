@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon {
+    width:333.3px;
+    padding-left: 25px;
+    background: url("https://static.thenounproject.com/png/101791-200.png") no-repeat left;
+    background-size: 18px;
+}
+
+.btn {
+    margin:3%;
+    width: 100px;
+}

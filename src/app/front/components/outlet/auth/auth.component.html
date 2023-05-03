@@ -1,0 +1,10 @@
+<h2 class="section-header">התחברות \ הרשמה</h2>
+
+<section class="content-section container myForm">
+    <div class="btns">
+        <button type="button" class="btn btn-primary" (click)="onLoginClick()">התחבר</button>
+        <button type="button" class="btn btn-primary" (click)="onRegisterClick()">הרשם</button>
+    </div>
+    <app-login-form *ngIf="formType === 0"></app-login-form>
+    <app-register-form *ngIf="formType === 1" (canLoginNow)="onLoginClick()"></app-register-form>
+</section>

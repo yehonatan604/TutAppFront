@@ -1,0 +1,7 @@
+<h2 class="section-header">{{title}}</h2>
+
+<section class="content-section container">
+    <div class="article-item" *ngFor="let article of articles">
+        <app-article-item [article]="article"></app-article-item>
+    </div>
+</section>

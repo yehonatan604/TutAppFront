@@ -1,0 +1,42 @@
+.btn {
+    text-align: center;
+    vertical-align: middle;
+    padding: .67em .67em;
+    cursor: pointer;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #4f4f4f;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-success {
+    color: white;
+    background-color: rgb(101, 195, 104);
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-success:hover {
+    background-color: rgb(66, 126, 68);
+}
+
+.btn-primary:hover {
+    background-color: #4f4f4fb6;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+
+.btn-danger:hover {
+    background-color: #CC4C4C;
+}

@@ -1,0 +1,30 @@
+table {
+    font-family: arial, sans-serif;
+    width: fit-content;
+    background-color: white;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+th {
+    background-color: skyblue;
+    text-align: center !important;
+}
+
+tr {
+    background-color: white;
+}
+
+#msg-row:hover {
+    background-color: rgb(64, 141, 224);
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: whitesmoke;
+    }
