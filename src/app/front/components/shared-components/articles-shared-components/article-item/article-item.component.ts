@@ -62,6 +62,7 @@ export class ArticleItemComponent implements OnInit {
   }
 
   editArticle() {
-    
+    this.articlesService.article = this.article;
+    this.router.navigate(['/create', 'edit', this.article.id]);
   }
 }

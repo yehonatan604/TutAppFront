@@ -13,6 +13,7 @@ export class StarsComponent {
     private articlesService: ArticlesService,
     private dialog: DialogBoxService
   ) {}
+  
 
   clicked: boolean = false;
 
@@ -21,13 +22,13 @@ export class StarsComponent {
       element.style.color = 'red';
     });
   }
-
+  
   onMouseLeave(...elements: HTMLElement[]) {
     elements.forEach((element) => {
       element.style.color = 'black';
     });
   }
-
+  
   onClick(unusedElements: HTMLElement[], ...elements: HTMLElement[]) {
     this.clicked = true;
     elements.forEach((element) => {

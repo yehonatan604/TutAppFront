@@ -15,6 +15,7 @@ import { MainModule } from './core/modules/main.module';
 import { MessageComponent } from './front/components/shared-components/messages-shared-components/message/message.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
+import { AuthService } from './core/services/users/auth.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
     FormsModule,
     MainModule,
   ],
-  providers: [DialogBoxService, {provide: HTTP_INTERCEPTORS,useClass: JwtInterceptor ,multi:true}],
+  providers: [DialogBoxService, AuthService, {provide: HTTP_INTERCEPTORS,useClass: JwtInterceptor ,multi:true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

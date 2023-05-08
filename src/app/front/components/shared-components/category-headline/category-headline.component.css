@@ -8,7 +8,7 @@ h2:hover, i:hover {
     background-position: -9ch 208em;
     box-shadow: 1px 1px gray;
     display: flex;
-    margin-top: 1%;
+    margin-top: 5%;
     justify-content: space-around;
     height: 40px;
 }

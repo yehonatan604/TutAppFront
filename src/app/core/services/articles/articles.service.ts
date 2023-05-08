@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Article } from "../../../data/models/article.model";
-import { ArticlePostDto } from "../../../data/DTOs/article.dtos";
+import { ArticlePostDto, ArticlePutDTO } from "../../../data/DTOs/article.dtos";
 
 @Injectable({ providedIn: 'root' })
 export class ArticlesService {
@@ -9,6 +9,8 @@ export class ArticlesService {
         private http: HttpClient
     ) { }
     
+    article!: Article;
+
     articlesUrl: string = 'https://localhost:7012/api/Articles';
     
     fetchArticles() {
@@ -37,6 +39,10 @@ export class ArticlesService {
 
     postArticle(article: ArticlePostDto) {
         return this.http.post<ArticlePostDto>(`${this.articlesUrl}/addNewArticle`, article);
+    }
+
+    putArticle(article: ArticlePutDTO) {
+        return this.http.put(`${this.articlesUrl}`, article);
     }
 
     deleteArticle(id: number) {

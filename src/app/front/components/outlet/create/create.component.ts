@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
-import { ArticlePostDto } from 'src/app/data/DTOs/article.dtos';
+import { ArticlePostDto, ArticlePutDTO } from 'src/app/data/DTOs/article.dtos';
 import { Image } from 'src/app/data/models/image.model';
 import { ArticlesService } from 'src/app/core/services/articles/articles.service';
 import { DialogBoxService } from 'src/app/core/services/dialog-box.service';
 import { EditorService } from 'src/app/core/services/editor.service'; 
 import { ImagesService } from 'src/app/core/services/images/images.service';
 import { AuthService } from 'src/app/core/services/users/auth.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-create',
@@ -17,6 +18,7 @@ import { AuthService } from 'src/app/core/services/users/auth.service';
 })
 export class CreateComponent implements OnInit {
   constructor(
+    private activatedRoute: ActivatedRoute,
     private usersService: AuthService,
     private articlesService: ArticlesService,
     private imagesService: ImagesService,
@@ -28,10 +30,12 @@ export class CreateComponent implements OnInit {
 
   editorConfig!: AngularEditorConfig;
 
-  article!: ArticlePostDto;
+  articlePost!: ArticlePostDto;
+  articleId!: number;
   image!: Image;
   categoryImageList!: Image[];
   categoriesList!: string[];
+  mode!: string;
 
   titleRegex!: string;
   contentRegex!: string;
@@ -45,33 +49,44 @@ export class CreateComponent implements OnInit {
     this.imagesService.fetchImages().subscribe(images => {
       this.categoryImageList = images;
     });
-
+    this.subscribeRouteParams();
     this.createForm();
+  }
+
+  subscribeRouteParams() {
+    this.activatedRoute.params.subscribe(params => {
+        if (params['mode'] == 'edit') {
+          this.mode = params['mode'];
+          this.articleId = params['id'];
+        } else { 
+          this.mode = 'create';
+        };
+      });
   }
 
   createForm() {
     this.createArticleForm = new FormGroup({
       'content': new FormControl(
-        null,
+        this.mode == 'edit' ? this.articlesService.article.content : null,
         [Validators.required, Validators.pattern(this.contentRegex)]
       ),
       'title': new FormControl(
-        null,
+        this.mode == 'edit' ? this.articlesService.article.title : null,
         [Validators.required, Validators.pattern(this.titleRegex)]
       ),
       'category': new FormControl(
-        null,
+        this.mode == 'edit' ? this.articlesService.article.category : null,
         [Validators.required]
       ),
       'image': new FormControl(
-        null,
+        this.mode == 'edit' ? this.articlesService.article.imageId : null,
         [Validators.required]
       ),
     });
   }
 
   createArticle() {
-    this.article = {
+    this.articlePost = {
       title: this.createArticleForm.value.title,
       imageId: 0,
       content: this.createArticleForm.value.content,
@@ -79,6 +94,15 @@ export class CreateComponent implements OnInit {
       userName: this.usersService.loggedInUser!.userName,
       userEmail: this.usersService.loggedInUser!.email,
       created: new Date()
+    }
+  }
+
+  putArticle() : ArticlePutDTO {
+    return {
+      id: this.articleId,
+      content: this.createArticleForm.value.content,
+      imageId: this.articlesService.article.imageId,
+      category: this.categoriesList.indexOf(this.createArticleForm.value.category)
     }
   }
   
@@ -94,8 +118,22 @@ export class CreateComponent implements OnInit {
     this.imagesService.fetchImageByTitle(this.createArticleForm.value.image)
     .subscribe(images => {
       this.createArticle();
-      this.article.imageId = images[0].id;
-      this.articlesService.postArticle(this.article).subscribe();
+      if (this.mode == 'create') {
+        this.articlePost.imageId = images[0].id;
+      }
+      this.articlePost.imageId = this.articlesService.article.imageId;
+      this.mode == 'create' ?
+        this.articlesService.postArticle(this.articlePost).subscribe(res => {
+          res ? 
+            this.dialog.fire('הוספת מאמר', 'המאמר נוסף בהצלחה', 'success') : 
+          this.dialog.fire('הוספת המאמר', 'הוספת המאמר נכשלה!', 'warning');
+        }) :
+        console.log(this.putArticle());
+          this.articlesService.putArticle(this.putArticle()).subscribe(res => {
+            res ? 
+              this.dialog.fire('הוספת מאמר', 'המאמר נוסף בהצלחה', 'success') : 
+            this.dialog.fire('הוספת המאמר', 'הוספת המאמר נכשלה!', 'warning');
+        });
     });
   }
 }

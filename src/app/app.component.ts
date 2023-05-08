@@ -10,19 +10,20 @@ export class AppComponent {
   title = 'Tut';
 
   constructor(
-    private usersService: AuthService,
+    private authService: AuthService,
     private localStorageService: localStorageService
   ) {
     if (localStorageService.checkToken()) {
-      this.usersService.refreshToken().subscribe((res) => {
+      this.authService.refreshToken().subscribe((res) => {
         if (res) {
           this.localStorageService.addToken(res.token, res.refreshToken, res.userId);
+        } else {
         }
-      });
-      this.usersService.getUser().subscribe((res) => {
+      })
+      this.authService.getUser().subscribe((res) => {
         if (res) {
-          this.usersService.loggedInUser = res;
-          this.usersService.loggedInUserChanged.next(res);
+          this.authService.loggedInUser = res;
+          this.authService.loggedInUserChanged.next(res);
         }
       });
     }

@@ -30,14 +30,14 @@ import { MessageGuard } from '../guards/message.guard';
         { path: 'home', component: HomeComponent},
         { path: 'search', component: SearchComponent},
         { path: 'library', component: LibraryComponent},
-        { path: 'create', component: CreateComponent, canActivate: [AuthGuard, CreatorGuard]},
+        { path: 'create/:mode/:id', component: CreateComponent, canActivate: [AuthGuard, CreatorGuard]},
         { path: 'messages', component: MessagesComponent, canActivate: [AuthGuard]},
         { path: 'personal', component: PersonalComponent, canActivate: [AuthGuard]},
         { path: 'login', component: AuthComponent},
         { path: 'articles/:id', component: ArticleComponent},
         { path: 'category/:title', component: ArticlesSteadyComponent},
         { path: 'message/:id', component: MessageComponent, canActivate: [AuthGuard, MessageGuard]},
-        { path: 'newMessage', component: NewMessageComponent, canActivate: [AuthGuard]},
+        { path: 'newMessage', component: NewMessageComponent, canActivate: [AuthGuard, MessageGuard]},
         { path: '**', component: HomeComponent}
     ]
     , {scrollPositionRestoration: 'enabled'})

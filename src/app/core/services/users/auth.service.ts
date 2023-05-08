@@ -4,7 +4,7 @@ import { Subject } from "rxjs";
 import { UserLoginDto, UserRegisterDto, UserTokenDto, UserUpdateDto } from "src/app/data/DTOs/user.dtos";
 import { User } from "../../../data/models/user.model";
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class AuthService {
     constructor(
         private http: HttpClient) {
