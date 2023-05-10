@@ -17,9 +17,8 @@ export class AppComponent {
       this.authService.refreshToken().subscribe((res) => {
         if (res) {
           this.localStorageService.addToken(res.token, res.refreshToken, res.userId);
-        } else {
         }
-      })
+      });
       this.authService.getUser().subscribe((res) => {
         if (res) {
           this.authService.loggedInUser = res;

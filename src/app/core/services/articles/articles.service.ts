@@ -11,41 +11,41 @@ export class ArticlesService {
     
     article!: Article;
 
-    articlesUrl: string = 'https://localhost:7012/api/Articles';
+    url: string = 'https://tutappapi-yehonatan.azurewebsites.net/v1/api/Articles';
     
     fetchArticles() {
-        return this.http.get<Article[]>(this.articlesUrl);
+        return this.http.get<Article[]>(this.url);
     }
     
     fetchArticleById(id: number) {
-        return this.http.get<Article>(`${this.articlesUrl}/${id}`);
+        return this.http.get<Article>(`${this.url}/${id}`);
     }
 
     addStarsToArticle(id: number, stars: number) {
-        return this.http.get<boolean>(`${this.articlesUrl}/addStarsToArticle/${id}/${stars}`).subscribe();
+        return this.http.get<boolean>(`${this.url}/addStarsToArticle/${id}/${stars}`).subscribe();
     }
 
     searchArticles(word: string) {
-        return this.http.get<Article[]>(`${this.articlesUrl}/?$filter=contains(title, '${word}')`);
+        return this.http.get<Article[]>(`${this.url}/?$filter=contains(title, '${word}')`);
     }
 
     fetchUserArticles(userName: string) {
-        return this.http.get<Article[]>(`${this.articlesUrl}/?$filter=contains(userEmail, '${userName}')`); 
+        return this.http.get<Article[]>(`${this.url}/?$filter=contains(userEmail, '${userName}')`); 
     }
 
     fetchArticlesBy(term: string) {
-        return this.http.get<Article[]>(`${this.articlesUrl}/?$orderby=${term}`); 
+        return this.http.get<Article[]>(`${this.url}/?$orderby=${term}`); 
     }
 
     postArticle(article: ArticlePostDto) {
-        return this.http.post<ArticlePostDto>(`${this.articlesUrl}/addNewArticle`, article);
+        return this.http.post<ArticlePostDto>(`${this.url}/addNewArticle`, article);
     }
 
     putArticle(article: ArticlePutDTO) {
-        return this.http.put(`${this.articlesUrl}`, article);
+        return this.http.put(`${this.url}`, article);
     }
 
     deleteArticle(id: number) {
-        return this.http.delete(`${this.articlesUrl}/${id}`);
+        return this.http.delete(`${this.url}/${id}`);
     }
 }

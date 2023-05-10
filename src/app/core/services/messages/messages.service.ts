@@ -11,7 +11,7 @@ export class MessagesService {
         private httpClient: HttpClient
     ) {}
 
-    url: string = 'https://localhost:7012/api/messages';
+    url: string = 'https://tutappapi-yehonatan.azurewebsites.net/api/v1/messages';
 
     getUserMessagesIn(email: string) {
         return this.httpClient.get<Message[]>(`${this.url}/?$filter=contains(ReciverEmail, '${email}')`);

@@ -7,22 +7,22 @@ export class ImagesService {
     constructor (private http: HttpClient) { 
     }
 
-    imagesUrl: string = 'https://localhost:7012/api/Images';
+    url: string = 'https://tutappapi-yehonatan.azurewebsites.net/v1/api/Images';
 
     fetchImages() {
-        return this.http.get<Image[]>(this.imagesUrl);
+        return this.http.get<Image[]>(this.url);
     }
 
     fetchImageById(id: number) {
-        return this.http.get<Image[]>(`${this.imagesUrl}/?$filter=id eq ${id}`);
+        return this.http.get<Image[]>(`${this.url}/?$filter=id eq ${id}`);
     }
 
     fetchImageByTitle(title: string) {
-        return this.http.get<Image[]>(`${this.imagesUrl}/?$filter=title eq '${title}'`);
+        return this.http.get<Image[]>(`${this.url}/?$filter=title eq '${title}'`);
     }
     
     postImage(imageUrl: string, imageTitle: string) {
-        return this.http.post(this.imagesUrl, {
+        return this.http.post(this.url, {
             Title: imageTitle,
             Location: imageUrl
         });
