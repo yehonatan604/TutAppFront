@@ -56,7 +56,7 @@ the backend application can be found <a href="https://github.com/yehonatan604/Tu
   - Data: models, DTO's, enums.
   - Front: components, pipes, styles.
 - JWT Authentication.
-- Authorization: 3 user roles - ["User", "Creator", "Admin"].
+- Authorization based route guards: 3 user roles - ["User", "Creator", "Admin"].
 - Counts number of views for each articles.
 - uploaded content is being senitized before upload.
 
