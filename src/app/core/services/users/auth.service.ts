@@ -1,8 +1,11 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
-import { UserLoginDto, UserRegisterDto, UserTokenDto, UserUpdateDto } from "src/app/data/DTOs/user.dtos";
 import { User } from "../../../data/models/user.model";
+import { UserLoginDto } from "src/app/data/DTOs/Users/userLogin.dto";
+import { UserRegisterDto } from "src/app/data/DTOs/Users/userRegister.dto";
+import { UserTokenDto } from "src/app/data/DTOs/Users/userToken.dto";
+import { UserUpdateDto } from "src/app/data/DTOs/Users/userUpdate.dto";
 
 @Injectable()
 export class AuthService {

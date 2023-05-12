@@ -1,7 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Article } from "../../../data/models/article.model";
-import { ArticlePostDto, ArticlePutDTO } from "../../../data/DTOs/article.dtos";
+import { ArticlePostDto } from "src/app/data/DTOs/Articles/articlePost.dto";
+import { ArticlePutDTO } from "src/app/data/DTOs/Articles/articlePut.dto";
 
 @Injectable({ providedIn: 'root' })
 export class ArticlesService {

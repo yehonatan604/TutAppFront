@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
-import { ArticlePostDto, ArticlePutDTO } from 'src/app/data/DTOs/article.dtos';
+import { ArticlePostDto } from 'src/app/data/DTOs/Articles/articlePost.dto';
+import { ArticlePutDTO } from 'src/app/data/DTOs/Articles/articlePut.dto';
 import { Image } from 'src/app/data/models/image.model';
 import { ArticlesService } from 'src/app/core/services/articles/articles.service';
 import { DialogBoxService } from 'src/app/core/services/dialog-box.service';

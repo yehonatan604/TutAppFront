@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { MessageSendDto } from 'src/app/data/DTOs/message.dtos';
-import { UserRegisterDto } from 'src/app/data/DTOs/user.dtos';
+import { MessageSendDto } from 'src/app/data/DTOs/Messages/message.dto';
+import { UserRegisterDto } from 'src/app/data/DTOs/Users/userRegister.dto';
 import { DialogBoxService } from 'src/app/core/services/dialog-box.service';
 import { MessagesService } from 'src/app/core/services/messages/messages.service';
 import { AuthService } from 'src/app/core/services/users/auth.service';

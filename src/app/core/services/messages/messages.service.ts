@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { MessageSendDto } from 'src/app/data/DTOs/message.dtos';
+import { MessageSendDto } from 'src/app/data/DTOs/Messages/message.dto';
 import { Message } from '../../../data/models/message.model';
 
 @Injectable({
