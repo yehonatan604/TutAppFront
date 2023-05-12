@@ -1,7 +1,7 @@
 import { UserStatusTypes, UserTypes } from "../enums/enums";
 
 export interface User {
-    id: number;
+    id: string;
     userName: string;
     password: string;
     email: string;

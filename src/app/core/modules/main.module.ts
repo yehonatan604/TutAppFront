@@ -29,6 +29,7 @@ import { BeautifyDatePipe } from 'src/app/front/pipes/beutify-date.pipe';
 import { MessageListComponent } from 'src/app/front/components/shared-components/messages-shared-components/message-list/message-list.component';
 import { NewMessageComponent } from 'src/app/front/components/outlet/messages/newMessageForm/new-message-form.component';
 import { StarsComponent } from 'src/app/front/components/shared-components/stars/stars.component';
+import { StarsService } from '../services/articles/stars.service';
 
 @NgModule({
   imports: [
@@ -70,7 +71,7 @@ import { StarsComponent } from 'src/app/front/components/shared-components/stars
     StringifyDatePipe,
     BeautifyDatePipe,
   ],
-  providers: [ImagesService, UserDetailsService],
+  providers: [ImagesService, UserDetailsService, StarsService],
   exports: [ShortenTextPipe, StringifyDatePipe, BeautifyDatePipe]
 })
 export class MainModule {}

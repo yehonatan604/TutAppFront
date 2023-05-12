@@ -5,9 +5,7 @@ import { ArticlePostDto, ArticlePutDTO } from "../../../data/DTOs/article.dtos";
 
 @Injectable({ providedIn: 'root' })
 export class ArticlesService {
-    constructor(
-        private http: HttpClient
-    ) { }
+    constructor(private http: HttpClient) { }
     
     article!: Article;
 
@@ -19,10 +17,6 @@ export class ArticlesService {
     
     fetchArticleById(id: number) {
         return this.http.get<Article>(`${this.url}/${id}`);
-    }
-
-    addStarsToArticle(id: number, stars: number) {
-        return this.http.get<boolean>(`${this.url}/addStarsToArticle/${id}/${stars}`).subscribe();
     }
 
     searchArticles(word: string) {
