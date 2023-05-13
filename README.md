@@ -29,7 +29,7 @@ the backend application can be found <a href="https://github.com/yehonatan604/Tu
   
   <br>
   
-  ```
+  ```bash
   npm i --lagacy-peer-deps
   
   ```
