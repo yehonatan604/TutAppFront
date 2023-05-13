@@ -38,7 +38,7 @@ the backend application can be found <a href="https://github.com/yehonatan604/Tu
 - Ensure that the API is running. The API documentation can be found <a href="https://github.com/yehonatan604/TutApp">here</a>.
 - To use the application, you will need to have a web browser on desktop or an Android or iOS device or an emulator. 
 
-### Features
+## Features
 
 - User Registration: - User must register himself by filling some personal details.
 - User Login: After registration user will enter Email and password for logging in order to get access to the system, access token saved untill user logs out.
@@ -51,7 +51,7 @@ the backend application can be found <a href="https://github.com/yehonatan604/Tu
 - Massages: User can get & send messages to the admin.
 - Personal: User can edit personal details, Creator can edit/delete his articles aswell.
 
-### Code Features:
+## Code Features:
 
 - The app folder is divided into 3 main folders:
 
@@ -67,5 +67,5 @@ the backend application can be found <a href="https://github.com/yehonatan604/Tu
 - Counts number of views for each articles.
 - uploaded content is being senitized before upload.
 
-### Troubleshooting
+## Troubleshooting
 If you encounter any issues when using the TutApp API, please refer to the project's GitHub Issues page to see if a solution has already been proposed. If not, you can open a new issue to report the problem.
