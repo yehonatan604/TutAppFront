@@ -12,6 +12,8 @@ the backend application can be found <a href="https://github.com/yehonatan604/Tu
 [Code Features](#code-features) <br>
 [Troubleshooting](#troubleshooting)
 
+---
+
 ## Installation
 
 - To run the application, you will need to have the following software installed on your computer:
