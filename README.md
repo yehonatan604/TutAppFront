@@ -2,7 +2,7 @@
 
 Tut is a web application that helps users find and read tutorials on various technological fiealds.<br> 
 This repository contains the code for the frontend of the application,<br>
-the backend application can be found <a href="https://github.com/yehonatan604/TutApp">here</a>.
+the backend application can be found <a href="https://github.com/yehonatan604/TutAppAPI">here</a>.
 
 ## Table of Contents
 
@@ -70,4 +70,4 @@ the backend application can be found <a href="https://github.com/yehonatan604/Tu
 - uploaded content is being senitized before upload.
 
 ## Troubleshooting
-If you encounter any issues when using the Tut, please refer to the project's GitHub Issues page to see if a solution has already been proposed. If not, you can open a new issue to report the problem.
+If you encounter any issues when using or installing Tut application, please refer to the project's GitHub Issues page to see if a solution has already been proposed. If not, you can open a new issue to report the problem.
