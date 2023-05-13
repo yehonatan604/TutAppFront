@@ -12,8 +12,6 @@ the backend application can be found <a href="https://github.com/yehonatan604/Tu
 [Code Features](#code-features) <br>
 [Troubleshooting](#troubleshooting)
 
----
-
 ## Installation
 
 - To run the application, you will need to have the following software installed on your computer:
@@ -70,4 +68,4 @@ the backend application can be found <a href="https://github.com/yehonatan604/Tu
 - uploaded content is being senitized before upload.
 
 ## Troubleshooting
-If you encounter any issues when using the TutApp API, please refer to the project's GitHub Issues page to see if a solution has already been proposed. If not, you can open a new issue to report the problem.
+If you encounter any issues when using the Tut, please refer to the project's GitHub Issues page to see if a solution has already been proposed. If not, you can open a new issue to report the problem.
