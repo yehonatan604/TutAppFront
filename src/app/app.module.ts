@@ -16,6 +16,8 @@ import { MessageComponent } from './front/components/shared-components/messages-
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { AuthService } from './core/services/users/auth.service';
+import { SpinnerComponent } from './front/components/shared-components/spinner/spinner.component';
+import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { AuthService } from './core/services/users/auth.service';
     MainComponent,
     BannerComponent,
     MessageComponent,
+    SpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,12 @@ import { AuthService } from './core/services/users/auth.service';
     FormsModule,
     MainModule,
   ],
-  providers: [DialogBoxService, AuthService, {provide: HTTP_INTERCEPTORS,useClass: JwtInterceptor ,multi:true}],
-  bootstrap: [AppComponent]
+  providers: [
+    DialogBoxService,
+    AuthService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
