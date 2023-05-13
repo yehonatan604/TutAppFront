@@ -18,8 +18,7 @@ the backend application can be found <a href="https://github.com/yehonatan604/Tu
 - To run the application, you will need to have the following software installed on your computer:
 
   - Node.js (v12.13.0 or higher)
-  - Visual Studio Code
-  - Web Browser
+  - Web Browser/Android/Ios/Emulator
 
 - Once you have these dependencies installed, follow these steps:
 
@@ -61,9 +60,13 @@ the backend application can be found <a href="https://github.com/yehonatan604/Tu
   - Data: models, DTO's, enums.
   - Front: components, pipes, styles.
   
-- JWT Authentication.
+- JWT Authentication, token is saved in storage.
+- Usage of BootStrap components & css.
+- JWT interceptor for cloning HTTP requests & adding the token.
+- Refresh token on startup/refresh.
 - Loading interceptor: while loading a spinner will pop up.
 - Generic reusable components.
+- original custom made carrusel & stars components.
 - Reactive forms with custom regex validators.
 - Authorization based route guards: 3 user roles - ["User", "Creator", "Admin"].
 - Counts number of views for each articles.
