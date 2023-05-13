@@ -1,4 +1,5 @@
 .article-items {
     display: flex;
-    justify-content:center;
+    justify-content: center;
+    width: 105%;
 }
