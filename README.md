@@ -14,6 +14,7 @@ the backend application can be found <a href="https://github.com/yehonatan604/Tu
 
 ## Installation
 
+- To run without installation, please continue to the [Usage section](#usage).
 - To run the application, you will need to have the following software installed on your computer:
 
   - Node.js (v12.13.0 or higher)
@@ -35,7 +36,8 @@ the backend application can be found <a href="https://github.com/yehonatan604/Tu
 
 ## Usage
 
-- Ensure that the API is running. The API documentation can be found <a href="https://github.com/yehonatan604/TutApp">here</a>.
+- to run without installation, the app is hosted on a private server, please click [here](https://yehonatan.moravia.co.il/tut/).
+- Ensure that the API is running. The API documentation can be found [here](https://tutappapi-yehonatan.azurewebsites.net/swagger/index.html).
 - To use the application, you will need to have a web browser on desktop or an Android or iOS device or an emulator. 
 
 ## Features
