@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { DialogBoxService } from 'src/app/core/services/dialog-box.service';
-import { ArticlesService } from 'src/app/core/services/articles/articles.service';
 import { StarsService } from 'src/app/core/services/articles/stars.service';
 import { AuthService } from 'src/app/core/services/users/auth.service';
 
@@ -13,8 +12,9 @@ export class StarsComponent {
   @Input() id!: number;
   constructor(
     private dialog: DialogBoxService,
-    private starsService: StarsService
-  ) {}
+    private starsService: StarsService,
+    private authService: AuthService
+  ) { }
   
 
   clicked: boolean = false;
@@ -32,6 +32,10 @@ export class StarsComponent {
   }
   
   onClick(unusedElements: HTMLElement[], ...elements: HTMLElement[]) {
+    if (!this.authService.loggedInUser!) {
+      this.dialog.fire('דירוג', 'עליך להיות מחובר על מנת לדרג מאמר','warning');
+      return;
+    }
     this.clicked = true;
     elements.forEach((element) => {
       element.className = 'fa fa-star';
@@ -46,7 +50,7 @@ export class StarsComponent {
     this.starsService.addStarsToArticle(this.id, elements.length).subscribe(res =>
       res ?
         this.dialog.fire('דירוג', 'הדירוג עודכן בהצלחה', 'success') :
-        this.dialog.fire('דירוג', 'אופס!\n משהו השתבש בדירוג\n אנא נסה שוב מאוחר יותר','success')
+        this.dialog.fire('דירוג', 'אופס!\n משהו השתבש בדירוג\n אנא נסה שוב מאוחר יותר','error')
     );
   }
 }

@@ -23,7 +23,7 @@ body {
 }
 
 .headline {
-    background-image: url("/assets/Images/HeaderBackground.png");
+    background-image: url("https://yehonatan.moravia.co.il/tut/assets/Images/HeaderBackground.png");
     background-position: -9ch 208em;
     width: 100%;
     margin-bottom: 1%;

@@ -4,7 +4,7 @@ h2:hover, i:hover {
 }
 
 .container {
-    background-image: url("/assets/Images/HeaderBackground.png");
+    background-image: url("https://yehonatan.moravia.co.il/tut/assets/Images/HeaderBackground.png");
     background-position: -9ch 208em;
     box-shadow: 1px 1px gray;
     display: flex;

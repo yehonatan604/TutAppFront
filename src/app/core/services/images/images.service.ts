@@ -23,8 +23,8 @@ export class ImagesService {
     
     postImage(imageUrl: string, imageTitle: string) {
         return this.http.post(this.url, {
-            Title: imageTitle,
-            Location: imageUrl
+            title: imageTitle,
+            location: imageUrl
         });
     }
 }

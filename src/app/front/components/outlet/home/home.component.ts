@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   articlesByNew!: Article[];
   articlesByStarred!: Article[];
   articlesByVisited!: Article[];
-  articleListType = ArticlesListTypes;
+  articleListTypes = ArticlesListTypes;
 
   constructor(
     private articlesService: ArticlesService,

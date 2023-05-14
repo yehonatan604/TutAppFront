@@ -39,7 +39,7 @@ h2 {
 
 .main-footer {
     background-color: rgb(0, 0, 0);
-    background-image: url("/assets/Images/HeaderBackground.png");
+    background-image: url("https://yehonatan.moravia.co.il/tut/assets/Images/HeaderBackground.png");
     color: white;
 }
 
@@ -58,4 +58,8 @@ img {
     margin-left: 2em;
     width:200px;
     height:auto;
+}
+
+i {
+    color: white;
 }

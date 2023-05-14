@@ -13,12 +13,12 @@ export class AuthGuard implements CanActivate {
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
         if (!this.usersService.loggedInUser) {
-            this.router.navigate(['/'])
+            this.router.navigate(['/login'])
                 .then(() => {
                     this.dialog.fire(
                         `הגישה נדחתה`,
                         'יש להיות מחובר על מנת לקבל גישה לאזור זה',
-                        'error'
+                        'warning'
                     );
                 });
         }

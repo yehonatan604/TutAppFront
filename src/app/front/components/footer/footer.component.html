@@ -2,9 +2,15 @@
     <div class="main-footer-container">
         <img src="assets/Images/logo.png">
         <ul class="nav footer-nav">
-            <li>אודות</li>
-            <li>צור קשר</li>
-            <li>מידע משפטי</li>
+            <li (click)="navigateToAboutPage()">
+                <i class="fa fa-file"> אודות</i>
+            </li>
+            <li (click)="makeContact()">
+                 <i class="fa fa-envelope"> צור קשר</i>
+            </li>
+            <li (click)="navigateToGithub()">
+                <i class="fa fa-github"> גיטהאב</i>
+            </li>
         </ul>
     </div>
 </footer>

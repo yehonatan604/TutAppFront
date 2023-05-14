@@ -18,6 +18,7 @@ import { JwtInterceptor } from './core/interceptors/jwt.interceptor';
 import { AuthService } from './core/services/users/auth.service';
 import { SpinnerComponent } from './front/components/shared-components/spinner/spinner.component';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
+import { AboutComponent } from './front/components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
     BannerComponent,
     MessageComponent,
     SpinnerComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,

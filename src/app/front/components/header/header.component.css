@@ -19,7 +19,7 @@ img {
 
 .main-header {
     background-color: rgba(0, 0, 0, .6);
-    background-image: url("/assets/Images/HeaderBackground.png");
+    background-image: url("https://yehonatan.moravia.co.il/tut/assets/Images/HeaderBackground.png");
     background-blend-mode: multiply;
     background-size: cover;
     padding: 0.3em;

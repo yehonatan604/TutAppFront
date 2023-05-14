@@ -3,7 +3,7 @@
   <app-category-headline
     [articlesList]="articlesByNew"
     [title]="'החדשים ביותר'"
-    (moveWasClicked)="move(articleListType.New, $event)"
+    (moveWasClicked)="move(articleListTypes.New, $event)"
   ></app-category-headline>
   <app-articles-moving
     class="article-items"
@@ -16,7 +16,7 @@
   <app-category-headline
     [articlesList]="articlesByStarred"
     [title]="'המדורגים ביותר'"
-    (moveWasClicked)="move(articleListType.Starred, $event)"
+    (moveWasClicked)="move(articleListTypes.Starred, $event)"
   ></app-category-headline>
   <app-articles-moving
     class="article-items"
@@ -29,7 +29,7 @@
   <app-category-headline
     [articlesList]="articlesByVisited"
     [title]="'הנצפים ביותר'"
-    (moveWasClicked)="move(articleListType.Visited, $event)"
+    (moveWasClicked)="move(articleListTypes.Visited, $event)"
   ></app-category-headline>
   <app-articles-moving
     class="article-items"

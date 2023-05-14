@@ -17,6 +17,7 @@ import { MessageComponent } from 'src/app/front/components/shared-components/mes
 import { AuthGuard } from '../guards/auth.guard';
 import { CreatorGuard } from '../guards/creator.guard';
 import { MessageGuard } from '../guards/message.guard';
+import { AboutComponent } from 'src/app/front/components/about/about.component';
 
 
 
@@ -28,6 +29,7 @@ import { MessageGuard } from '../guards/message.guard';
   export class RoutingModule { 
     public static forRoot = RouterModule.forRoot([
         { path: 'home', component: HomeComponent},
+        { path: 'about', component: AboutComponent},
         { path: 'search', component: SearchComponent},
         { path: 'library', component: LibraryComponent},
         { path: 'create/:mode/:id', component: CreateComponent, canActivate: [AuthGuard, CreatorGuard]},
