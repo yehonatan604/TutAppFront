@@ -70,7 +70,7 @@ the backend application can be found <a href="https://github.com/yehonatan604/Tu
 - Reactive forms with custom regex validators.
 - Authorization based route guards: 3 user roles - ["User", "Creator", "Admin"].
 - Counts number of views for each articles.
-- uploaded content is being senitized before upload.
+- uploaded content that includes HTML tags is being senitized before upload.
 
 ## Troubleshooting
 If you encounter any issues when using or installing Tut application, please refer to the project's GitHub Issues page to see if a solution has already been proposed. If not, you can open a new issue to report the problem.
