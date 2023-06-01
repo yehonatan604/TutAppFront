@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
+import { CanActivate, Router } from '@angular/router';
 import { DialogBoxService } from '../services/dialog-box.service';
 import { AuthService } from '../services/users/auth.service';
 
@@ -11,7 +11,7 @@ export class AuthGuard implements CanActivate {
         private dialog: DialogBoxService
     ) { }
 
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
+    canActivate() {
         if (!this.usersService.loggedInUser) {
             this.router.navigate(['/login'])
                 .then(() => {

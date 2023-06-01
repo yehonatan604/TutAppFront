@@ -20,8 +20,9 @@ export class ArticlesService {
         return this.http.get<Article>(`${this.url}/${id}`);
     }
 
-    searchArticles(word: string) {
-        return this.http.get<Article[]>(`${this.url}/?$filter=contains(title, '${word}')`);
+    searchArticles(word: string, term:string) {
+        term ?? 'created';
+        return this.http.get<Article[]>(`${this.url}/?$filter=contains(title, '${word}')&$orderby=${term}`);
     }
 
     fetchUserArticles(userName: string) {

@@ -1,7 +1,15 @@
 <h1 class="section-header">חיפוש</h1>
 <section class="content-section container">
     <input type="text" class="icon" value placeholder="Search" [(ngModel)]="search"/>
+    <br>
+    <p>סדר לפי:</p>
+    <select name="order-by" id="order-by" [(ngModel)]="orderBy">
+        <option value="stars">popularity</option>
+        <option value="views">views</option>
+        <option value="created">date</option>
+    </select>
     <button class="btn btn-primary" (click)="onClick()">GO</button>
     <app-articles-steady [articles]="articles"></app-articles-steady>
+    <br><br>
     <br><br>
 </section>

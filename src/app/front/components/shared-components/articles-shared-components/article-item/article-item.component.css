@@ -31,9 +31,10 @@
 }
 
 .content {
-  top: 70%;
+  top: 40%;
   direction: ltr;
   font-size: 10px;
+  overflow: hidden;
 }
 
 .article-item-image {

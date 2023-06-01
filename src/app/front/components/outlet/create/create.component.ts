@@ -33,6 +33,7 @@ export class CreateComponent implements OnInit {
 
   articlePost!: ArticlePostDto;
   articleId!: number;
+  imageId!: number;
   image!: Image;
   categoryImageList!: Image[];
   categoriesList!: string[];
@@ -56,9 +57,9 @@ export class CreateComponent implements OnInit {
 
   subscribeRouteParams() {
     this.activatedRoute.params.subscribe(params => {
-        if (params['mode'] == 'edit') {
-          this.mode = params['mode'];
-          this.articleId = params['id'];
+      if (params['mode'] == 'edit') {
+        this.mode = params['mode'];
+        this.articleId = params['id'];
         } else { 
           this.mode = 'create';
         };
@@ -87,9 +88,12 @@ export class CreateComponent implements OnInit {
   }
 
   createArticle() {
+    this.imageId = this.categoryImageList.filter( image => { 
+      return image.title == this.createArticleForm.value.image
+    })[0].id;
     this.articlePost = {
       title: this.createArticleForm.value.title,
-      imageId: 0,
+      imageId: this.imageId,
       content: this.createArticleForm.value.content,
       category: this.categoriesList.indexOf(this.createArticleForm.value.category),
       userName: this.usersService.loggedInUser!.userName,
@@ -120,9 +124,11 @@ export class CreateComponent implements OnInit {
     .subscribe(images => {
       this.createArticle();
       if (this.mode == 'create') {
-        this.articlePost.imageId = images[0].id;
+        this.articlePost.imageId = this.imageId;
       }
+      else {
       this.articlePost.imageId = this.articlesService.article.imageId;
+      }
       this.mode == 'create' ?
         this.articlesService.postArticle(this.articlePost).subscribe(res => {
           res ? 

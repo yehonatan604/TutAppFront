@@ -10,14 +10,16 @@ import { ArticlesService } from 'src/app/core/services/articles/articles.service
 export class SearchComponent implements OnInit {
   search!: string;
   articles!: Article[];
+  orderBy!: string;
   constructor(private articleService: ArticlesService) { }
+
 
   ngOnInit(): void {
   }
 
   onClick() {
-    this.articleService.searchArticles(this.search).subscribe(items => {
-      this.articles = items;
+    this.articleService.searchArticles(this.search, this.orderBy).subscribe(items => {
+      this.articles = items.reverse();
     })
   }
 

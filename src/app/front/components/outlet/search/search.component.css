@@ -15,3 +15,12 @@
     margin:3%;
     width: 100px;
 }
+
+#order-by {
+    margin-top: 0.5%;
+    width: 20%;
+}
+
+p {
+    font-size: larger;
+}
